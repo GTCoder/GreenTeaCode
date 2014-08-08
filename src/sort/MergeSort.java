@@ -1,5 +1,9 @@
 package sort;
 
+/**
+ * 1. In mergeSort(), do not forget to add the terminating case (check if start < end)!!!
+ * 2. In merge(), initialize another temporary array temp to hold the sorted integers temporarily
+ */
 public class MergeSort {
 	public void sort(int[] array) {
 		mergesort(array, 0, array.length - 1);
