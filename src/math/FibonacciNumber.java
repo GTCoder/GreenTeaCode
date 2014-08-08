@@ -3,6 +3,8 @@ package math;
 /**
  * 1. In the for loop, i starts at 2!!! 
  * 2. Fib(0) = 0, Fib(1) = 1
+ * 
+ * Please refer: http://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
  */
 public class FibonacciNumber {
 	public int fib(int n) {
