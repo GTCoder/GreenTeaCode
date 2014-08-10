@@ -1,3 +1,7 @@
+/**
+ * 1. The getInstance() method is STATIC!!!
+ * 2. The constructor Singleton() is PRIVATE!!!
+ */
 package designpattern;
 
 public class Singleton {
