@@ -65,4 +65,16 @@ public class BitManipulationTest {
 		num = 15; // 1111
 		assertEquals(8, this.myBitManipulation.clearBits(num, 2, 0)); // 1000
 	}
+	
+	@Test
+	public void testFlip() {		
+		assertEquals(1, this.myBitManipulation.flip(0));
+		assertEquals(0, this.myBitManipulation.flip(1));
+	}
+	
+	@Test
+	public void testGetSign() {
+		assertEquals(1, this.myBitManipulation.getSign(7));
+		assertEquals(0, this.myBitManipulation.getSign(-7));
+	}
 }

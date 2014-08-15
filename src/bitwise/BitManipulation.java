@@ -55,4 +55,26 @@ public class BitManipulation {
 	public int clearBits(int num, int high, int low) {
 		return clearHighBits(num, low) | clearLowBits(num, high);
 	}
+
+	/**
+	 * Flip the least Significant digit
+	 * 
+	 * @param bit
+	 *            input
+	 * @return int after flip
+	 */
+	public int flip(int bit) {
+		return 1 ^ bit;
+	}
+
+	/**
+	 * Check if an integer is positive or negative
+	 * 
+	 * @param n
+	 *            the integer
+	 * @return 1 if positive, 0 if negative
+	 */
+	public int getSign(int n) {
+		return flip((n >> 31) & 0x1);
+	}
 }
