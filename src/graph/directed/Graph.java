@@ -11,19 +11,20 @@ public class Graph {
 		// For LinkedList, two operations: add() and removeFirst()
 		LinkedList<DirectedGraphNode> queue = new LinkedList<DirectedGraphNode>();
 		
-		node.state = State.Visiting;
-		this.visit(node);
+		this.visit(node);							// First visit it
+		node.state = State.Visiting;				// Then mark it as "Visiting"		
 		queue.add(node);
 		
 		while (!queue.isEmpty()) {
 			DirectedGraphNode cur = queue.removeFirst();
 			for (DirectedGraphNode neighbor : cur.getAdjacent()) {
 				if (neighbor.state == State.Unvisited) {
-					this.visit(neighbor);
-					neighbor.state = State.Visiting;
+					this.visit(neighbor);			// First visit it
+					neighbor.state = State.Visiting;// Then mark it as "Visiting"
 					queue.add(neighbor);					
 				}
 			}
+			// Finally, after all its neighbors have been touched, mark it as "Visited"
 			cur.state = State.Visited;
 		}				
 	}
@@ -35,19 +36,20 @@ public class Graph {
 		
 		LinkedList<DirectedGraphNode> stack = new LinkedList<DirectedGraphNode>();
 		
-		node.state = State.Visiting;
-		this.visit(node);
+		this.visit(node);							// First visit it
+		node.state = State.Visiting;				// Then mark it as "Visiting"
 		stack.add(node);
 		
 		while (!stack.isEmpty()) {
 			DirectedGraphNode cur = stack.removeLast();
 			for (DirectedGraphNode neighbor : cur.getAdjacent()) {
 				if (neighbor.state == State.Unvisited) {
-					this.visit(neighbor);
-					neighbor.state = State.Visiting;
+					this.visit(neighbor);			// First visit it
+					neighbor.state = State.Visiting;// Then mark it as "Visiting"
 					stack.add(neighbor);
 				}
 			}
+			// Finally, after all its neighbors have been touched, mark it as "Visited"
 			cur.state = State.Visited;
 		}				
 	}
@@ -57,14 +59,15 @@ public class Graph {
 			return;
 		}
 		
-		this.visit(node);
-		node.state = State.Visiting;
+		this.visit(node);							// First visit it
+		node.state = State.Visiting;				// Then mark it as "Visiting"
 		
 		for (DirectedGraphNode neighbor : node.getAdjacent()) {
 			if (neighbor.state == State.Unvisited) {
 				depthFirstSearchRecursive(neighbor);
 			}
 		}
+		// Finally, after all its neighbors have been touched, mark it as "Visited"
 		node.state = State.Visited;
 	}
 	
