@@ -9,7 +9,8 @@ public class BinarySearch {
 		int mid;
 
 		while (start <= end) {
-			mid = (start + end) / 2;
+//			mid = (start + end) / 2;
+			mid = start + (end - start) / 2;
 			if (array[mid] < target) {
 				start = mid + 1;
 			} 
@@ -29,7 +30,8 @@ public class BinarySearch {
 			return -1;
 		}
 		
-		int mid = (start + end) / 2;
+//		int mid = (start + end) / 2;
+		int mid = start + (end - start) / 2;
 		
 		if (array[mid] < target) {
 			return binarySearchRecursive(array, mid + 1, end, target);
