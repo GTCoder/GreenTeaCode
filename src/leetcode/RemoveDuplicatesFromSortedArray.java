@@ -9,7 +9,11 @@ package leetcode;
 public class RemoveDuplicatesFromSortedArray {
 	public int removeDuplicates(int[] A) {
 		// Validate input
-		if (A == null || A.length == 0) {
+		if (A == null) {
+			return -1;
+		}
+
+		if (A.length == 0) {
 			return 0;
 		}
 
