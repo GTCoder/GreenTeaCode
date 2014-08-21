@@ -9,6 +9,7 @@ public class BinarySearch {
 		int mid;
 
 		while (start <= end) {
+			// Use start + (end - start) / 2 instead of (start + end) / 2 to prevent overflow
 //			mid = (start + end) / 2;
 			mid = start + (end - start) / 2;
 			if (array[mid] < target) {
@@ -30,6 +31,7 @@ public class BinarySearch {
 			return -1;
 		}
 		
+		// Use start + (end - start) / 2 instead of (start + end) / 2 to prevent overflow 
 //		int mid = (start + end) / 2;
 		int mid = start + (end - start) / 2;
 		
