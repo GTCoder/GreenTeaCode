@@ -29,7 +29,7 @@ import java.util.PriorityQueue;
  *     2.2 poll(): get and remove top 
  */
 public class P189 {
-	PriorityQueue<Integer> minHeap;
+	PriorityQueue<Integer> miniHeap;
 	PriorityQueue<Integer> maxHeap;
 
 	public P189() {
@@ -49,7 +49,7 @@ public class P189 {
 			}
 		}; // Don't forget this semicolon!
 
-		this.minHeap = new PriorityQueue<Integer>();
+		this.miniHeap = new PriorityQueue<Integer>();
 
 		// 1 is the initialCapacity of the priority queue.
 		// Note: The initialCapacity can NOT be 0!!!
@@ -57,19 +57,19 @@ public class P189 {
 	}
 
 	public void add(int n) {
-		if (this.minHeap.size() == this.maxHeap.size()) {
+		if (this.miniHeap.size() == this.maxHeap.size()) {
 			if ((this.maxHeap.size() > 0) && (n < this.maxHeap.peek())) {
-				this.minHeap.add(this.maxHeap.poll());
+				this.miniHeap.add(this.maxHeap.poll());
 				this.maxHeap.add(n);
 			} 
 			else {
-				this.minHeap.add(n);
+				this.miniHeap.add(n);
 			}
 		} 
 		else {
-			if (n > this.minHeap.peek()) {
-				this.maxHeap.add(this.minHeap.poll());
-				this.minHeap.add(n);
+			if (n > this.miniHeap.peek()) {
+				this.maxHeap.add(this.miniHeap.poll());
+				this.miniHeap.add(n);
 			} 
 			else {
 				this.maxHeap.add(n);
@@ -78,16 +78,16 @@ public class P189 {
 	}
 
 	public double getMedian() {
-		if (this.minHeap.size() == 0) {
+		if (this.miniHeap.size() == 0) {
 			return 0;
 		}
 
-		if (this.minHeap.size() == this.maxHeap.size()) {
-			return (((double) this.minHeap.peek()) + ((double) this.maxHeap
+		if (this.miniHeap.size() == this.maxHeap.size()) {
+			return (((double) this.miniHeap.peek()) + ((double) this.maxHeap
 					.peek())) / 2;
 		} 
 		else {
-			return this.minHeap.peek();
+			return this.miniHeap.peek();
 		}
 	}
 
