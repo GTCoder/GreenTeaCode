@@ -92,7 +92,21 @@ public class P189 {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		P189 tester = new P189();
+		int[] input = new int[] { 1, 5, 7, 6, 8, -3, 3, -1, 0, 49, 2 };
 
+		for (int i = 0; i < input.length; i++) {
+			tester.add(input[i]);
+			double median = tester.getMedian();
+			String msg1 = "The median of ";
+			String msg2 = "";
+			for (int j = 0; j <= i; j++) {
+				msg2 = msg2 + input[j] + ", ";
+			}
+			msg2 = msg2.substring(0, msg2.length() - 1);
+			msg2 = "[" + msg2 + "]";
+			String msg3 = " is " + median;
+			System.out.println(msg1 + msg2 + msg3);
+		}
 	}
 }
