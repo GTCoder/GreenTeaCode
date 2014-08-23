@@ -48,7 +48,7 @@ public class P189 {
 				}
 			}
 		}; // Don't forget this semicolon!
-
+		
 		this.miniHeap = new PriorityQueue<Integer>();
 
 		// 1 is the initialCapacity of the priority queue.
