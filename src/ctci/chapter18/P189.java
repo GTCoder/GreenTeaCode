@@ -57,6 +57,7 @@ public class P189 {
 	}
 
 	public void add(int n) {
+		// 2x2 = 4 cases. Need to handle differently.
 		if (this.miniHeap.size() == this.maxHeap.size()) {
 			if ((this.maxHeap.size() > 0) && (n < this.maxHeap.peek())) {
 				this.miniHeap.add(this.maxHeap.poll());
