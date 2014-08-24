@@ -21,7 +21,7 @@ public class P187 {
 
 	public String getLongestWord(String[] words) {
 
-		// A comparator in reverse order
+		// A comparator compare strings based on their length in reverse natural order
 		Comparator<String> comp = new Comparator<String>() {
 			@Override
 			public int compare(String word1, String word2) {
