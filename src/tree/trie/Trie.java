@@ -102,7 +102,8 @@ public class Trie<V> {
 				trie.get(key)));
 
 		key = "abc";
-		trie.deleteKey("abc");
+		trie.deleteKey(key);
+		System.out.println(String.format("Delete key: %s", key));
 
 		key = "x";
 		System.out.println(trie.get(key) == null ? String.format(
@@ -116,5 +117,14 @@ public class Trie<V> {
 		System.out.println(trie.get(key) == null ? String.format(
 				"Get %s: null", key) : String.format("Get %s: %b", key,
 				trie.get(key)));
+		
+//		Output
+//		Get x: true
+//		Get az: false
+//		Get abc: true
+//		Delete key: abc
+//		Get x: true
+//		Get az: false
+//		Get abc: null
 	}
 }
