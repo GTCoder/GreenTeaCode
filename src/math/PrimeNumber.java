@@ -5,7 +5,12 @@ import java.util.Arrays;
 /**
  * What is prime number?
  * "A prime number is a natural number GREAT THAN 1 that has no positive divisors other than 1 and itself."
- * - Wikipedia Note: 2 is a prime number!
+ * - Wikipedia 
+ * 
+ * Note:  1) 2 is a prime number!
+ *        2) The cross off should start at prime * prime, because any k * prime where k < prime should 
+ *           already been crossed off in a prior iteration     
+ *  
  */
 public class PrimeNumber {
 
