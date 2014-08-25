@@ -3,10 +3,11 @@ package sort;
 /**
  * 3-way partition variation of quick sort has better performance when there are
  * only few unique keys to sort, so use always use the 3-way partition instead
- * of the standard 2-way partition. 
+ * of the standard 2-way partition.
  * 
- * Reference URL:
- * http://www.sorting-algorithms.com/
+ * Both 2-way partition and 3-way partition are very tricky!!!
+ * 
+ * Reference URL: http://www.sorting-algorithms.com/
  */
 
 public class QuickSort {
@@ -43,7 +44,7 @@ public class QuickSort {
 
 		return p;
 	}
-	
+
 	public void quicksort2(int[] A, int start, int end) {
 		if (A == null || A.length == 0 || start < 0 || end >= A.length) {
 			return;
@@ -59,11 +60,11 @@ public class QuickSort {
 		quicksort2(A, start, p1 - 1);
 		quicksort2(A, p2 + 1, end);
 	}
-	
+
 	public int[] makeThreeWayPartition(int[] A, int start, int end) {
 		int pivotIndex = getPivotIndex(A, start, end);
 		int pivot = A[pivotIndex];
-		
+
 		int p = start;
 		while (p <= end) {
 			if (A[p] > pivot) {
@@ -79,11 +80,11 @@ public class QuickSort {
 				p++;
 			}
 		}
-		
+
 		int[] res = new int[2];
 		res[0] = start;
 		res[1] = end;
-		
+
 		return res;
 	}
 
