@@ -23,6 +23,7 @@ public class SearchInsertPosition {
 			}
 		}
 
+		// Or return end + 1
 		return start;
 	}
 }
