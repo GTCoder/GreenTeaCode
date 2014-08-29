@@ -1,6 +1,9 @@
 package leetcode;
 
 public class MaximumSubarray {
+	/**
+	 * Tags: Array
+	 */
     public int maxSubArray(int[] A) {
     	if (A == null || A.length == 0) {
     		return 0;
